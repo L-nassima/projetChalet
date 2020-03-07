@@ -1,0 +1,14 @@
+<table id="displayChalet">
+                
+    <?php foreach($search as $Service) :?>
+    <tr>
+        <td class="description"><a href="detailChalet.php?id=<?=$Service['id_chalet'] ?>"><h3><?= $Service["name"] ?></h3></a>
+            <p><?=$Service['description'] ?><p>
+            <p class="detailChalet"><?=$Service['massif'] ?> / <?=$Service['station'] ?><br>
+            <?=$Service['price'] ?> € </p>
+        </td>
+        <td><a href="detailChalet.php?id=<?=$Service['id_chalet'] ?>"><img src="img/slider/<?=$Service["chalet"] ?>" alt="<?= $Service["name"] ?>" class="imgChalet"></a><td>
+    </tr>    
+    <?php endforeach; ?>
+
+</table>

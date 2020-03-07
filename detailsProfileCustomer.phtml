@@ -1,0 +1,52 @@
+<section id="sectionProfile">
+    <h2>Bienvenue <?=$customerConnect["lastName"];?> <?=$customerConnect["firstName"];?> sur votre profil</h2>
+    <table id="infoProfile">
+        <tr>
+            <th class="detailProfil" colspan='8'>Détails de votre profil</th>
+        </tr>
+        <tr>
+            <td>Nom</td>
+            <td><?= $customerConnect["firstName"]; ?></td>
+        </tr>
+        <tr>
+            <td>Prénom</td>
+            <td><?= $customerConnect["lastName"]; ?></td>
+        </tr>
+        <tr>
+            <td>pseudo</td>
+            <td><?= $customerConnect["pseudo"]; ?></td> 
+        </tr>
+        <tr>
+            <td>E-mail</td>
+            <td><?= $customerConnect['email']; ?></td>
+        </tr>
+        <tr>    
+            <td>Téléphone</td>
+            <td><?= $customerConnect['phone']; ?></td>
+        </tr>
+        <tr>
+            <td>Adresse</td>
+            <td><?= $customerConnect['adress']; ?></td>
+        </tr>
+        </tr>
+            <td>Code postale</td>
+            <td><?= $customerConnect['postal_code']; ?></td>
+        </tr>
+        <tr>
+            <td>Date d'inscription</td>
+            <td><?=$customerConnect['inscription_date']; ?></td>
+        </tr>
+    </table>    
+        
+    <button type="submit" id="buttonProfile"><a href="editProfileCustomer.php?id=<?= intval($customerConnect['id_customer']); ?>">Modifier votre profil</a></button>
+    <?php if(isset($customerConnect) && $customerConnect['admin']==1) : ?>
+        <button type="submit" id="buttonProfile"><a href="infoProfileCustomerAdmin.php?id=<?= intval($customerConnect['id_customer']); ?>">profil des Clients</a></button>
+    <?php endif;?>
+</section>        
+        
+
+
+
+    
+
+               

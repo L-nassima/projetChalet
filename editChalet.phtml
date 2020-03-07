@@ -1,0 +1,175 @@
+<form method='POST' enctype="multipart/form-data" class='form formConnect'>
+    <h3>La mise à jour du chalet</h3>
+    <div class="inputBox">
+        <input type="text" name="newName"  placeholder="nom de chalet" value="<?= $dataChalets['name'];?>">
+    </div>
+
+    <div class="inputBox">
+        <input type="file" name="newChalet"   placeholder="image de chalet">
+    </div>
+
+    <div class="inputBox">
+        <select  name="newMassif" id="massif" value="<?= $dataChalets['massif'];?>">
+            <option value="Alpes du Nord">Massif</option>
+            <option value="Alpes du Nord">Alpes du Nord</option>
+            <option value="Alpes du Sud">Alpes du Sud</option>
+            <option value="Vosges">Vosges</option>
+            <option value="Valais">Valais</option>
+        </select>
+    </div>
+
+    <div class="inputBox">
+        <select  name="newStation" id="station" value="<?= $dataChalets['station'];?>">
+            <option Value="">Station</option>
+            <option Value="Chamonix">Chamonix</option>
+            <option Value="Isola 2000">Isola 2000</option>
+            <option Value="Les Gets">Les Gets</option>
+            <option Value="Les Arcs">Les Arcs</option>
+            <option Value="La Plagne">La Plagne</option>
+            <option Value="La bresse">La bresse</option>
+        </select>
+    </div>
+
+    <div class="inputBox" >
+        <select id="Nb_Pers" name="newNb_Pers" value="<?= $dataChalets['Nb_Pers'];?>">
+            <option value="2">Nb.Pers</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+    </div>
+
+   <div class="inputBox">
+        <textarea id="description" name="newDescription" placeholder="Désciption" rows="6" cols="30"><?= $dataChalets['description']; ?></textarea>
+    </div>
+    
+    <div class="inputBox" id="addServiceChalet">
+        <div class="input" id="addService"><span>Services</span></div>
+        <div id="addService_contenu">
+            <label><input type="checkbox" name="newServices[]" value="sauna"><span>Sauna</span></label><br>
+            <label><input type="checkbox" name="newServices[]" value="jacuzzi"><span>Jacuzzi</span></label><br>
+            <label><input type="checkbox" name="newServices[]" value="piscine"><span>Piscine</span></label><br>
+            <label><input type="checkbox" name="newServices[]" value="hammam"><span>Hammam</span></label>
+        </div>
+    </div>      
+
+    <div class="inputBox">
+        <input type="text"  name="newPrice" id="price"  placeholder="Prix" value="<?= $dataChalets['price'];?>">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="newDuree_sejour" id="duree_sejour" placeholder="La durée de séjour" value="<?= $dataChalets['duree_sejour'];?>">
+    </div>
+
+    <div class="inputBox">
+        <label for='image1' class='image_chalet'>image une</label>
+        <input type="file" name="newImage1" id="image1">
+    </div>
+
+    <div class="inputBox">
+        <label for='image2' class='image_chalet'>image deux</label>
+        <input type="file" name="newImage2" id="image2">
+    </div>
+
+    <div class="inputBox">
+        <label for='image3' class='image_chalet'>image trois</label>
+        <input type="file" name="newImage3" id="image3">
+    </div>
+
+    <div class="inputBox">
+        <label for='image4' class='image_chalet'>image quatre</label>
+        <input type="file" name="newImage4" id="image4">
+    </div>
+
+    <div class="inputBox">
+        <label for='image5' class='image_chalet'>image cinq</label>
+        <input type="file" name="newImage5" id="image5">
+    </div>
+
+    <div class="inputBox">
+        <label for='image6' class='image_chalet'>image six</label>
+        <input type="file" name="newImage6" id="image6">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="newCondition_une" id="condition_une" placeholder="Condition une de séjour" value="<?= $dataChalets['condition_une'];?>">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="newCondition_deux" id="condition_deux" placeholder="Condition deux de séjour" value="<?= $dataChalets['condition_deux'];?>">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="newCondition_trois" id="condition_trois" placeholder="Condition trois de séjour" value="<?= $dataChalets['condition_trois'];?>">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="newCondition_quatre" id="condition_quatre" placeholder="Condition quatre de séjour" value="<?= $dataChalets['condition_quatre'];?>">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="newCondition_cinq" id="condition_cinq" placeholder="Condition cinq de séjour" value="<?= $dataChalets['condition_cinq'];?>">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="newPrestation_une" id="prestation_une" placeholder=" Préstation une de séjour" value="<?= $dataChalets['prestation_une'];?>">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="newPrestation_deux" id="prestation_deux" placeholder=" Préstation deux de séjour" value="<?= $dataChalets['prestation_deux'];?>">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="newPrestation_trois" id="prestation_trois" placeholder=" Préstation trois de séjour" value="<?= $dataChalets['prestation_trois'];?>" >
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="newPrestation_quatre" id="prestation_qutre" placeholder=" Préstation quatre de séjour"value="<?= $dataChalets['prestation_quatre'];?>" >
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="newPrestation_cinq" id="prestation_cinq" placeholder=" Préstation cinq de séjour" value="<?= $dataChalets['prestation_cinq'];?>">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="newPrestation_six" id="prestation_six" placeholder=" Préstation six de séjour" value="<?= $dataChalets['prestation_six'];?>">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="newInfo_une" id="info_une" placeholder="Informations une sur la station" value="<?= $dataChalets['info_une'];?>">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="newInfo_deux" id="info_deux" placeholder="Informations deux sur la station" value="<?= $dataChalets['info_deux'];?>">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="newInfo_trois" id="info_trois" placeholder="Informations trois sur la station" value="<?= $dataChalets['info_trois'];?>">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="newInfo_quatre" id="info_qutre" placeholder="Informations quatre sur la station" value="<?= $dataChalets['info_quatre'];?>">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="newInfo_cinq"id="info_cinq"  placeholder="Informations cinq sur la station" value="<?= $dataChalets['info_cinq'];?>">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="newInfo_six" id="info_six" placeholder="Informations six sur la station" value="<?= $dataChalets['info_six'];?>">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="newPromotions" id="promotions" placeholder="Promotion" value="<?= $dataChalets['promotions'];?>">
+    </div>
+    <div class="inputBox">
+        <input type="text"  name="newBest_chalet" id="best_chalet" placeholder="meilleur chalet" value="<?= $dataChalets['best_chalet'];?>">
+    </div>
+
+    <div class="inputBox">
+        <button type="submit">Publier</button>
+        <button type="reset"><a href="chaletSelectionAdmin.php?id="<?= $_SESSION['id_customer']; ?>>Annuler</a></button>
+    </div>
+</form>

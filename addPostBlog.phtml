@@ -1,0 +1,25 @@
+<body id="fondPost">	
+	<section id="sectionPost">
+		<form  method="POST" class="form" id="postForm">
+			<h3>Rédiger un nouvel article</h3>
+
+			<div class="inputBox">		
+				<input type="text" id="title" name="title" placeholder="titre">
+			</div>
+
+			<div class="inputBox">
+				<textarea  id="content" name="content" rows="15" cols="50" placeholder="contenu"></textarea>
+			</div>
+
+			<div class="inputBox">
+				<input type="text" name="auteur" placeholder="Auteur" value='<?= $customerConnect['pseudo']; ?>'>
+			</div>
+
+			<div class="inputBox">
+				<button type='submit' name="submit">Enregistrer</button>
+				<button type='reset' name="reset"><a href='indexBlog.php?id=<?= intval($customerConnect['id_customer']); ?>'>Annuler</button>
+			</div>
+		</form>
+	</section>
+</body>	
+

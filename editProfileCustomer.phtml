@@ -1,0 +1,51 @@
+    
+<form method="POST" action="editProfileCustomer.php" enctype="multipart/form-data" class='form formConnect'>
+    <h3 class='editionProfil'>Editer mon profil </h3>    
+    <div class="inputBox">
+        <input type="text" name="newFirstName" id="newFirstName" value='<?= $customerConnect['firstName']; ?>'>  
+    </div>
+
+    <div class="inputBox">
+        <input type="text" name="newLastName" id="newLastName" value='<?= $customerConnect['lastName']; ?>'>  
+    </div>
+                
+    <div class="inputBox">
+        <input type="text" name="newPseudo" id="newPseudo" value='<?= $customerConnect['pseudo']; ?>'>       
+    </div>
+
+    <div class="inputBox">
+        <input type="password" name="newPassword" id="newPassword" value='<?= $customerConnect['password']; ?>'>  
+    </div>
+                  
+    <div class="inputBox">
+        <input type="text" name="newEmail" id='newEmail' value='<?= $customerConnect['email']; ?>'>
+    </div>
+
+    <div class="inputBox">
+        <input type="tel" name='newPhone' id="newPhone" value='<?= $customerConnect['phone']; ?>'>  
+    </div>
+                        
+    <div class="inputBox">
+        <input type="text" name="newAdress" id="newAdress" value='<?= $customerConnect['adress']; ?>'> 
+    </div>
+
+    <div class="inputBox">
+        <input type="text" name="newPostal_code" id="newPostal_code" value='<?= $customerConnect['postal_code']; ?>'> 
+    </div>
+
+    <div class="inputBox">
+        <label for='newProfilPicture' class='customer_picture'>Photo de profil</label>
+        <input type="file" name="newProfilPicture" id="newProfilPicture" class="file">
+        <div>
+            <?php if(!empty($errors['newProfilPicture'])) : ?>
+                <p class='erreur'><?= $errors['newProfilPicture']; ?></p>
+            <?php endif; ?>
+        </div>
+    </div>   
+                    
+    <div class="inputBox">
+        <button type="submit" id="buttonEditProfile">Mise à jour du profil</button>
+        <button type="reset"><a href="customerProfile.php?id="<?= $customerConnect['id_customer']; ?>>Annuler</a></button>
+    </div>
+</form>
+

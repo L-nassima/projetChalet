@@ -1,0 +1,87 @@
+<section class="chaletNotFound">
+    <section id="textDispo">
+        <h2><span>Aucun produit ne correspond à votre recherche!!</span></h2>
+        
+    </section>
+
+    <section id="home-section">
+        <section id="home_form">            
+            <div id="titre" class="input input_groupe">
+                <h3 class="titre">Recherche</h3>
+            </div>
+
+            <form method="GET" action="searchChalet.php">        
+                <div class="input_groupe">  
+                    <select id="massif" name="massif" class="input">
+                        <option value="Alpes du Nord">Massif</option>
+                        <option value="Alpes du Nord">Alpes du Nord</option>
+                        <option value="Alpes du Sud">Alpes du Sud</option>
+                        <option value="Valais">Valais</option>
+                        <option value="Vosges">Vosges</option>
+                    </select>
+                </div>
+
+                <div class="input_groupe">
+                    <select id="station" name="station" class="input">
+                        <option Value="">Station</option>
+                        <option Value="Chamonix">Chamonix</option>
+                        <option Value="Isola 2000">Isola 2000</option>
+                        <option Value="Les Gets">Les Gets</option>
+                        <option Value="Les Arcs">Les Arcs</option>
+                        <option Value="Verbier">Le Verbier</option>
+                        <option Value="La Plagne">La Plagne</option>
+                        <option Value="La bresse">La bresse</option>
+                        <option Value="Les Orres">Les Orres</option>
+                    </select>
+                </div>
+
+                <div class="input_groupe">
+                    <select id="Nb_Pers" name="Nb_Pers" class="input">
+                        <option value="">Nb.Pers</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+
+                <div class="input_groupe">
+                    <select id="duree_sejour" name="duree_sejour" class="input">
+                        <option value="">Durée de séjour</option>
+                        <option value="2">2</option>
+                        <option value="4">4</option>
+                        <option value="7">7</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                    </select>
+                </div>
+
+                <div class="input_groupe">
+                    <div class="input" id="price"><span>Prix</span></div>                
+                    <div id="prix_Chalet">
+                        <p>Valeur: <span id="valueRange"></span> €</p> 
+                        <input type="range" id="budget" class="myRange" name="price" value="500"  min="300" max="2000" step="50">                
+                    </div>   
+                </div>
+
+                <div class="input_groupe">
+                    <div class="input" id="service"><span>Services</span></div>
+                    <div id="service_contenu">
+                        <label><input type="checkbox" name="services[]" value="sauna"><span>Sauna</span></label><br>
+                        <label><input type="checkbox" name="services[]" value="jacuzzi"><span>Jacuzzi</span></label><br>
+                        <label><input type="checkbox" name="services[]" value="piscine"><span>Piscine</span></label><br>
+                        <label><input type="checkbox" name="services[]" value="hammam"><span>Hammam</span></label>
+                    </div>
+                </div>
+                <div class="input_groupe">
+                    <input type="submit" value="Rechercher" id="submit_button">
+                </div>    
+            </form>
+        </section>    
+    </section>    
+</section>
+<section id="sectionChalet">
+    <a href="chaletAlpesDuNord.php">Chalet Alpes du Nord</a>/<a href="ChaletAlpesDuSud.php">Chalet Alpes du Sud</a>/
+    <a href="ChaletVosges.php">Chalet Vosges</a>/<a href="ChaletValais.php">Chalet Valais</a>
+</section>

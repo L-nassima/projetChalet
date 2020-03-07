@@ -1,0 +1,35 @@
+<body id = "profileHomePage">
+    <section  id="homePage">
+        <h1>Bienvenue  <?=$customerConnect["lastName"];?></h1>
+        <img src="img/customers_images/<?=$customerConnect['profile_picture'];?>" class='image_client' alt="image du profil de client">
+        <h2>Pour vous</h2>
+
+        <section id="bestPromotion">
+            <h2>La selection de nos<span> meilleurs Promotions du:</span></h2>
+            <div id="currentDate"></div>
+            <div id="currentHour"></div>         
+            <?php foreach($dataBestPromotion as $bestPromotion) :?>
+                <article class="detailsBestPromotion">
+                    <h3><a href="detailChalet.php?id=<?=$bestPromotion['id_chalet'] ?>"><?= $bestPromotion["name"] ?></h3></a>
+                    <p class="detailChalet"><?=$bestPromotion['massif'] ?> / <?=$bestPromotion['station'] ?></p>
+                    <div class="chaletPromo">
+                        <img src="img/slider/<?=$bestPromotion["chalet"] ?>" class="imgPromo" alt="<?= $bestPromotion["name"] ?>">        
+                        <div class="masque_promo"></div>
+                        <div class="promo_infos">
+                            <p class="reduction bestReduction">- <?=$bestPromotion['promotions'] ?>%</p>
+                            <div class="arrow-down"></div>
+                            <p>7 nuits</p>
+                            <p>à partir de</p>
+                            <p><span><?=$bestPromotion['price'] ?>€</span></p>     
+                        </div>   
+                        <div>    
+                            <button class="buttonPromo"><a href="detailChalet.php?id=<?=$bestPromotion['id_chalet'] ?>">j'en profite</a></button>
+                        </div>
+                    </div>
+                </article>                                                                    
+            <?php endforeach; ?>
+        </section>
+    </section>       
+</body>  
+
+   

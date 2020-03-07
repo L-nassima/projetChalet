@@ -1,0 +1,41 @@
+
+<table id=displayChalet>
+                    
+    <?php
+       $req=$pdo->query('SELECT * FROM chalet LIMIT ' .$depart. ',' .$nombre_articles_par_page);
+       while($promotion = $req->fetch()) {
+    ?>
+
+    <tr>
+        <td class="description"><a href="detailChalet.php?id=<?=$promotion['id_chalet'] ?>"><h3><?= $promotion["name"] ?></h3></a>
+            <p><?=$promotion['description'] ?><p>
+            <p class="detailChalet"><?=$promotion['massif'] ?> / <?=$promotion['station'] ?><br>
+            <?=$promotion['price'] ?> € </p>
+        </td>                    
+        <td>
+            <div class="chaletPromo">
+                <img src="img/slider/<?=$promotion["chalet"] ?>" class="imgPromo" alt="<?= $promotion["name"] ?>">        
+                <div class="masque_promo"></div>
+                <div class="promo_infos">
+                    <p class="reduction">- <?=$promotion['promotions'] ?>%</p>
+                    <p>7 nuits</p>
+                    <p>à partir de</p>
+                    <p><span><?=$promotion['price'] ?>€</span></p>     
+                </div>   
+                <div>    
+                    <button class="buttonPromo"><a href="detailChalet.php?id=<?=$promotion['id_chalet'] ?>">j'en profite</a></button>
+                </div>
+            </div>                                                                
+        </td>                                       
+    </tr>
+       
+    <?php 
+        }
+    ?>
+    
+</table>
+
+<?php 
+    echo '<div id="pagination">' . $pagination . '</div>';
+?>
+

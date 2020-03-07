@@ -1,0 +1,60 @@
+<section id="chalet">
+	<section id="post">
+		<?php foreach ($post as $key => $value) :?>				
+			<h2 class="titre"><?= $value['title']?></h2>
+			<p class="content"><?= $value['content'] ?></p>
+			<p class="auteur"> Rédiger par : <span><?=$value['pseudo'] ?></span></p>
+			<p class="date">Le :<?= $value['publication_date'] ?></p>
+			<a href="editPostBlog.php?id=<?= $value['id_posts']; ?>" class='editPost'>Editer</a>
+			<a href="addPostBlog.php?id=<?= $value['id_posts']; ?>" class='newPost'>Un nouvel article</a>							
+		<?php endforeach; ?>
+	</section>
+						
+	<section id="comment">
+		<h3><i class="far fa-comments"></i> Commentaires</h3>
+		<?php foreach ($commentBlog as $key => $value) :?>
+			<p class="auteur"><strong><?= htmlspecialchars($value['pseudo']);?></strong></p>
+			<p class="date">Le: <?= htmlspecialchars($value['publication_date']) ?></p>
+			<p class="content"><?=htmlspecialchars($value['content'])?></p>
+		<?php endforeach;?>
+	</section>
+
+	<div id="commentPlus">
+		<button>Poster un commentaire</button>
+	</div>
+
+	<form method="POST" action="detailsPostBlog.php?id=<?= $id ?>" class="form" id="formComment">
+		<h3>Donner votre Avis</h3>
+		<div class="inputBox">	
+			<input type="text" name="pseudo" id="pseudo" placeholder="pseudo" value="<?php if(isset($pseudo)) echo $pseudo; ?>">
+			<div> 
+				<?php if(!empty($errores['pseudo'])):?>
+					<p class='erreur'><?= $errores['pseudo']; ?></p>	
+				<?php endif; ?>
+			</div>
+		</div>
+								
+		<div class="inputBox">	
+			<textarea id="commentaire" name="commentaire" rows="10" cols="35" placeholder="commentaire" ><?php if(isset($commentaire)) echo $commentaire; ?></textarea>
+			<div>
+				<?php if(!empty($errores['commentaire'])):?>
+					<p class='erreur'><?= $errores['commentaire']; ?></p>	
+				<?php endif; ?>
+			</div>
+		</div>
+
+		<div>
+			<?php if(isset($succes) && count($errores)==0) : ?>
+				<p class='success'><?= $succes; ?></p>
+			<?php endif; ?>
+		</div>
+							
+		<button type="submit" name="submit" >Ajouter</button>
+		<button type="reset" name="submit" ><a href="indexBlog.php?id=<?= intval($customerConnect["id_customer"]); ?>">Annuler</a></button>
+			
+	</form>
+</section>
+
+
+
+	

@@ -1,0 +1,177 @@
+<form method='POST' enctype="multipart/form-data" class="form formChalet">
+    <h3>l'ajout d'un chalet dans le catalogue</h3>
+
+    <div class="inputBox">
+        <input type="text" name="name" placeholder="nom de chalet">
+    </div>
+
+    <div class="inputBox">
+        <input type="file" name="chalet" placeholder="image de chalet">
+    </div>
+
+    <div class="inputBox">
+        <select  name="massif" id="Massif">
+            <option value="Alpes du Nord">Massif</option>
+            <option value="Alpes du Nord">Alpes du Nord</option>
+            <option value="Alpes du Sud">Alpes du Sud</option>
+            <option value="Vosges">Vosges</option>
+            <option value="Valais">Valais</option>
+        </select>
+    </div>
+
+    <div class="inputBox">
+        <select  name="station" id="station">
+            <option Value="">Station</option>
+            <option Value="Chamonix">Chamonix</option>
+            <option Value="Isola 2000">Isola 2000</option>
+            <option Value="Les Gets">Les Gets</option>
+            <option Value="Les Arcs">Les Arcs</option>
+            <option Value="La Plagne">La Plagne</option>
+            <option Value="La bresse">La bresse</option>
+        </select>
+    </div>
+
+    <div class="inputBox">
+        <select id="Nb_Pers" name="Nb_Pers">
+            <option value="2">Nb.Pers</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+    </div>
+
+    <div class="inputBox">
+        <textarea  name="description" id="description" placeholder="Désciption" rows="6" cols="30"></textarea>
+    </div>
+
+    <div class="inputBox" id="addServiceChalet">
+        <div class="input" id="addService" name="services"><span>Services</span></div>
+        <div id="addService_contenu">
+            <input type="checkbox" name="services[]" value="sauna"><span>Sauna</span><br>
+            <input type="checkbox" name="services[]" value="jacuzzi"><span>Jacuzzi</span><br>
+            <input type="checkbox" name="services[]" value="piscine"><span>Piscine</span><br>
+            <input type="checkbox" name="services[]" value="hammam"><span>Hammam</span>
+        </div>
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="price" id="price"  placeholder="Prix">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="duree_sejour" id="duree_sejour" placeholder="La durée de séjour">
+    </div>
+
+    <div class="inputBox">
+        <label for='image1' class='image_chalet'>image une</label>
+        <input type="file" name="image1" id="image1">
+    </div>
+
+    <div class="inputBox">
+        <label for='image2' class='image_chalet'>image deux</label>
+        <input type="file" name="image2" id="image2">
+    </div>
+
+    <div class="inputBox">
+        <label for='image3' class='image_chalet'>image trois</label>
+        <input type="file" name="image3" id="image3">
+    </div>
+
+    <div class="inputBox">
+        <label for='image4' class='image_chalet'>image quatre</label>
+        <input type="file" name="image4" id="image4">
+    </div>
+
+    <div class="inputBox">
+        <label for='image5' class='image_chalet'>image cinq</label>
+        <input type="file" name="image5" id="image5">
+    </div>
+
+    <div class="inputBox" >
+        <label for='image6' class='image_chalet'>image six</label>
+        <input type="file" name="image6" id="image6">
+    </div>
+
+    <div class="inputBox" >
+        <input type="text"  name="condition_une" id="condition_une" placeholder="Condition une de séjour">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="condition_deux" id="condition_deux" placeholder="Condition deux de séjour">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="condition_trois" id="condition_trois" placeholder="Condition trois de séjour">
+    </div>
+
+    <div class="inputBox" >
+        <input type="text"  name="condition_quatre" id="condition_quatre" placeholder="Condition quatre de séjour">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="condition_cinq" id="condition_cinq" placeholder="Condition cinq de séjour">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="prestation_une" id="prestation_une" placeholder=" Préstation une de séjour">
+    </div>
+
+    <div class="inputBox" >
+        <input type="text"  name="prestation_deux" id="prestation_deux" placeholder=" Préstation deux de séjour">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="prestation_trois" id="prestation_trois" placeholder=" Préstation trois de séjour">
+    </div>
+
+    <div class="inputBox" >
+        <input type="text"  name="prestation_quatre" id="prestation_qutre" placeholder=" Préstation quatre de séjour">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="prestation_cinq" id="prestation_cinq" placeholder=" Préstation cinq de séjour">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="prestation_six" id="prestation_six" placeholder=" Préstation six de séjour">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="info_une" id="info_une" placeholder="Informations une sur la station">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="info_deux" id="info_deux" placeholder="Informations deux sur la station">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="info_trois" id="info_trois" placeholder="Informations trois sur la station">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="info_quatre" id="info_qutre" placeholder="Informations quatre sur la station">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="info_cinq"id="info_cinq"  placeholder="Informations cinq sur la station">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="info_six" id="info_six" placeholder="Informations six sur la station">
+    </div>
+
+    <div class="inputBox">
+        <input type="text"  name="promotions" id="promotions" placeholder="Promotion">
+    </div>
+    <div class="inputBox">
+        <input type="text"  name="best_chalet" id="best_chalet" placeholder="meilleur chalet">
+    </div>
+
+    <div class="inputBox">
+        <button type="submit">Publier</button>
+        <button type="reset"><a href="index.php?id="<?= $_SESSION['id_customer']; ?>>Annuler</a></button>
+    </div>
+        
+</form>

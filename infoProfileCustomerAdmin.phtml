@@ -1,0 +1,30 @@
+<table id="adminBlog">
+    <tr>
+        <th colspan='8'>La liste des clients</th>
+    </tr>
+
+    <tr class="customersInfo">
+        <td>N° de Client</td>
+        <td>Nom</td>
+        <td>Prénom</td>
+        <td>Pseudo</td>
+        <td>E-mail</td>
+        <td>N° de téléphone</td>
+        <td>Adresse</td>
+        <td>Date d'inscription</td>
+    </tr>
+
+    <?php foreach($list as $customer): ?>
+    <tr>
+        <td><?= $customer['id_customer']; ?></td>
+        <td><?= $customer['firstName']; ?></td>
+        <td><?= $customer['lastName']; ?></td>
+        <td><?= $customer['pseudo']; ?></td>
+        <td><?= $customer['email']; ?></td>
+        <td><?= $customer['phone']; ?></td>
+        <td><?= $customer['adress']; ?></td>
+        <td><?= $customer['inscription_date']; ?></td>
+        <td><a href='deletCustomer.php?id=<?= intval($customer['id_customer']);?>'><span><i class="fas fa-times"></i></span></a></td>
+    </tr>
+    <?php endforeach; ?>    
+</table>

@@ -1,0 +1,214 @@
+  
+<section class="slider-container flexslider" id="slider_chalet">
+    <button id="btnPrev"><i class="fas fa-arrow-left" id="sliderPrev" onclick="plusSlides(-1)"></i></button>
+    <button id="btnNext"><i class="fas fa-arrow-right" id ="sliderNext" onclick="plusSlides(1)"></i></button>
+    <ul class="images-slider slides" >
+        <?php foreach ($dataChalet as $chalet): ?>          
+        <li class="slider_chalet">
+            <img src="img/slider/<?=$chalet['image1']?>" alt="image des pieces du chalet"/>        
+        </li>                
+            
+        <li class="slider_chalet">
+            <img src="img/slider/<?=$chalet['image2']?>" alt="image des pieces du chalet"/>        
+        </li>
+            
+        <li class="slider_chalet">
+            <img src="img/slider/<?=$chalet['image3']?>" alt="image des pieces du chalet"/>       
+        </li>
+            
+        <li class="slider_chalet">
+            <img src="img/slider/<?=$chalet['image4']?>" alt="image des pieces du chalet"/>
+        </li>
+            
+        <li class="slider_chalet" >
+            <img src="img/slider/<?=$chalet['image5']?>" alt="image des pieces du chalet"/>         
+        </li>
+                                  
+        <li class="slider_chalet">
+            <img src="img/slider/<?=$chalet['image6']?>" alt="image des pieces du chalet"/>
+        </li>
+        <?php endforeach;?>
+    </ul>
+</section>
+
+<section id="imagesMiniatures">
+    <ul id="pictures">
+    <?php foreach ($dataChalet as $chalet): ?>
+        <li class="thumbnailImage">
+            <img class="image_chalet cursor" src="img/slider/<?=$chalet['image1']?>" alt="image miniature des pieces du chalet" id="image_chalet" onclick="currentSlide(1)"/>
+        </li>
+
+        <li class="thumbnailImage">
+            <img class="image_chalet cursor" src="img/slider/<?=$chalet['image2']?>" alt="image miniature des pieces du chalet" id="image_chalet" onclick="currentSlide(2)"/>
+        </li>
+
+        <li class="thumbnailImage">
+            <img class="image_chalet cursor" src="img/slider/<?=$chalet['image3']?>" alt="image miniature des pieces du chalet" id="image_chalet" onclick="currentSlide(3)"/>
+        </li>
+
+        <li class="thumbnailImage">
+            <img class="image_chalet cursor " src="img/slider/<?=$chalet['image4']?>" alt="image miniature des pieces du chalet" id="image_chalet" onclick="currentSlide(4)"/>
+        </li>
+
+        <li class="thumbnailImage">
+            <img class="image_chalet cursor" src="img/slider/<?=$chalet['image5']?>" alt="image miniature des pieces du chalet" id="image_chalet" onclick="currentSlide(5)"/>
+        </li>
+
+        <li class="thumbnailImage">
+            <img class="image_chalet cursor" src="img/slider/<?=$chalet['image6']?>" alt="image miniature des pieces du chalet" id="image_chalet" onclick="currentSlide(6)"/>
+        </li>
+    <?php endforeach;?>               
+    </ul>
+</section>
+
+
+<section class="navigation">
+    <nav id="menu_chalet">
+        <ul class="nav_liens">
+            <li id="nav_description"><a href="#description">Résidence</a>
+            </li>
+            <li id="nav_reservation"><a href="#Contact">Contact</a>
+            </li>
+            <li id="nav_prestation"><a href="#prestation">Prestation</a>
+            </li>
+            <li id="nav_conditions"><a href="#conditions">Conditions</a>
+            </li>
+            <li id="nav_info-station"><a href="#info-station">Info Station</a>
+            </li>
+        </ul>
+        <div class="burger">
+            <div class="lien1"></div>
+            <div class="lien2"></div>
+            <div class="lien3"></div>
+        </div>
+    </nav>
+</section>
+
+<section id="detailsChalet">
+
+    <section id="description">
+        <?php foreach ($dataChalet as $chalet): ?>
+            <h3><?=$chalet["name"]?></h3>   
+            <p><?=$chalet["description"]?></p>
+        <?php endforeach;?>
+    </section> 
+            
+    <section id="Contact">
+        <h3>Demande d'information</h3>
+
+        <?php if(isset($_SESSION['id_customer'])) :?>
+            <p>Afin de bénéficier de <span><?=$chalet["promotions"]?>%</span>  du réduction sur le <span><?=$chalet["name"]?></span> veuillez nous contacter par téléphone au <span>33 (0) 3 92 35 17 78</span> autrement remplissez ce formulaire et nous vous contacteront dans les plus brefs délais.</p>
+        <?php else : ?>
+            <p>Pour toutes reservations ou plus d'informations sur le <span><?=$chalet["name"]?></span> veuillez nous contacter par téléphone au <span>33 (0) 3 92 35 17 78</span> autrement remplissez ce formulaire et nous vous contacteront dans les plus brefs délais</p> 
+        <?php endif; ?>
+        <p class="information">Toutes les données que vous nous soumettez seront traitées de manière confidentielle.</p>
+        <form method="POST" action ="detailChalet.php?id= <?= $id_chalet ?>" class="form">
+            <div class="inputBox">    
+                <input type="text" name="firstName"  placeholder="Nom" value ="<?php if(isset($firstName)) echo $firstName; ?>">
+                <?php if(!empty($errores['firstName'])):?>
+                    <div class='erreur'>
+                        <?= $errores['firstName']; ?>
+            </div>
+                <?php endif; ?>
+            </div>
+
+            <div class="inputBox">    
+                <input type="text" name="lastName"  placeholder="Prénom"value = "<?php if(isset($lastName)) echo $lastName; ?>">
+                <?php if(!empty($errores['lastName'])):?>
+                    <div class='erreur'>
+                        <?= $errores['lastName']; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+
+            <div class="inputBox">
+                <input type="text" name="email" placeholder="Email" value = "<?php if(isset($email)) echo $email; ?>">
+                <?php if(!empty($errores['email'])):?>
+                    <div class='erreur'>
+                        <?= $errores['email']; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+
+            <div class="inputBox">
+                <input type="text" name="phone" placeholder="Téléphone" value ="<?php if(isset($phone)) echo $phone; ?>">
+                <?php if(!empty($errores['phone'])):?>
+                    <div class='erreur'>
+                        <?= $errores['phone']; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+
+            <div class="inputBox">
+            <textarea name="message" placeholder="Message" rows="5" cols="33"  rows="5" cols="30" value ="<?php if(isset($message)) echo $message; ?>"></textarea>
+                <?php if(!empty($errores['message'])):?>
+                    <div class='erreur'>
+                        <?= $errores['message']; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+
+                <?php if(isset($success) && count($errores)==0) : ?>
+                    <p class="success"><?= $success ?></p>
+                <?php endif; ?>
+                
+            <div>
+                <button type="submit">Envoyer</button>
+            </div>
+
+        </form>
+    </section>
+
+    <section id="prestation">
+        <h3>Préstations <?php foreach ($dataChalet as $chalet): ?><?=$chalet["name"]?><?php endforeach;?></h3>
+        <p class="openingTime">Arrivée : de 17h00 à 21h00 - Départ : jusqu'à 11h00 </p>
+        <h4>Inclus :</h4>
+        <?php foreach ($dataChalet as $chalet): ?>
+            <p><i class="far fa-check-circle"></i><?=$chalet["prestation_une"]?></p>
+            <p><i class="far fa-check-circle"></i><?=$chalet["prestation_deux"]?></p>
+            <p><i class="far fa-check-circle"></i><?=$chalet["prestation_trois"]?></p>
+            <p><i class="far fa-check-circle"></i><?=$chalet["prestation_quatre"]?></p>
+            <p><i class="far fa-check-circle"></i><?=$chalet["prestation_cinq"]?></p>
+            <p><i class="far fa-check-circle"></i><?=$chalet["prestation_six"]?></p>
+        <?php endforeach;?>
+    </section> 
+
+    <section id="conditions">
+        <h3>Conditions d'annulation</h3>
+        <p>L'annulation de votre réservation entraîne des frais qui vous seront facturés selon le barème suivant :</p>
+        <?php foreach ($dataChalet as $chalet): ?>
+            <p><?=$chalet["condition_une"]?></p>
+            <p><?=$chalet["condition_deux"]?></p>
+            <p><?=$chalet["condition_trois"]?></p>
+            <p><?=$chalet["condition_quatre"]?></p>
+            <p><?=$chalet["condition_cinq"]?></p>
+            <p>Les frais d'annulation sont calculés sur la base des prix nets.</p>
+            <p>Toute annulation doit être signifiée par écrit à <span>Chalet Vacances</span>, la date de réception déterminant la date de la demande d’annulation.</p>
+        <?php endforeach;?>
+    </section>
+
+    <section id="info-station">
+        <h3>Infos <?php foreach ($dataChalet as $chalet): ?><?=$chalet["name"]?><?php endforeach;?></h2></h3>
+        <h4>Activités :</h4>
+        <?php foreach ($dataChalet as $chalet): ?>
+            <p class="info"><?=$chalet["info_une"]?></p>
+            <p class="info"><?=$chalet["info_deux"]?></p>
+            <p class="info"><?=$chalet["info_trois"]?></p>
+            <p class="info"><?=$chalet["info_quatre"]?></p>
+            <p class="info"><?=$chalet["info_cinq"]?></p>
+            <p class="info"><?=$chalet["info_six"]?></p>
+        <?php endforeach;?>
+    </section>
+    <section id="pageLink">
+        <?php if(isset($_SESSION['id_customer'])) :?>
+            <p>Vous souhaitez visionner les activités dans l'ensemble de nos stations <a href="displayVideo.php?id= <?= $_SESSION['id_customer'] ?>">cliquez-ici</a></p>
+            <p>Vous souhaitez accéder à la liste des articles de notre blog <a href="indexBlog.php?id= <?= $_SESSION['id_customer'] ?>">cliquez-ici</a></p>
+            <p>Vous souhaitez poster un article concernant ce chalet <a href="addPostBlog.php?id= <?= $id_chalet ?>">cliquez-ici</a></p>       
+        <?php endif; ?>
+    </section> 
+</section>
+
+
+
+
+

@@ -1,0 +1,24 @@
+<table id="displayChalet">
+
+    <?php
+        $req=$pdo->query('SELECT * FROM chalet WHERE massif="Vosges" LIMIT ' .$depart. ',' .$nombre_articles_par_page);
+        while($chalet = $req->fetch()) {
+    ?>
+        <tr>
+            <td class="description"><a href="detailChalet.php?id=<?=$chalet['id_chalet'] ?>"><h3><?= $chalet["name"] ?></h3></a>
+                <p><?=$chalet['description'] ?><p>
+                <p class="detailChalet"><?=$chalet['massif'] ?> / <?=$chalet['station'] ?><br>
+                <?=$chalet['price'] ?> € </p>
+            </td>
+            <td><a href="detailChalet.php?id=<?=$chalet['id_chalet'] ?>"><img src="img/slider/<?=$chalet["chalet"] ?>" class="imgChalet" alt="<?= $chalet["name"] ?>"></a><td>
+        </tr>
+
+    <?php 
+        }
+    ?>
+
+</table>
+                
+<?php 
+    echo '<div id="pagination">' . $pagination . '</div>';
+?>

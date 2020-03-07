@@ -1,0 +1,233 @@
+
+/*formulaire de recherche page index*/
+#titre {
+    width: 100%;
+    height: 40px; 
+    background: #000;
+    opacity: 0.8;
+    color: #fff;
+    text-align: center;
+    border: 8px solid #000;
+    font-size: 2rem;
+    line-height: 0.7rem;
+    letter-spacing: 0.1rem;
+}
+.input_groupe{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    display: table;
+    border-collapse: collapse;
+    border: 4px solid #000;
+}   
+.input, .select {
+    border: none;
+    width: 100%;
+    height: 40px;
+}
+#service_contenu, #addService_contenu{
+    position: absolute;
+    background-color: #1a1a1a;
+    color: #fff;
+    border:  5px solid rgb(33,32,32);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(160,10,18);
+    display: none;
+}
+#service_contenu{
+    left:0;
+    top: 40px;
+    width: 100%;
+    height: 200px;
+    margin-top:60px; 
+}
+#service_contenu label{
+    display: inline-block;
+    width: 40%;
+    margin: 5px 10px;
+    text-align: left;
+}
+#service_contenu.active,
+#prix_Chalet.active,
+#addService_contenu.active,
+#formComment.active{
+    display: block; 
+}   
+#service,
+#price{
+    position: relative;
+    height: 40px;
+}
+#service span,
+#price span {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+#prix_Chalet{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin: auto ;
+    display: none;
+}
+.myRange {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    margin-bottom: 50px;
+    background: linear-gradient(90deg, rgb(160,10,18) 60%, rgb(214, 214, 214) 60%);
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+    -webkit-border-radius: 17px;
+    border-radius: 17px;
+    box-shadow: 0px 1px 10px 1px #000;
+    cursor: pointer;   
+}
+.myRange:hover {
+     opacity: 1;
+}
+#submit_button {
+    width: 100%;
+    height: 55px;
+    padding: 20px;
+    border: none;
+    background: rgb(160,10,18);
+    color: #fff;
+    font-size: 2rem;
+    line-height: 0.7rem;
+    /*position: relative;*/  
+}
+#submit_button:hover {
+     background: rgb(18, 145, 18);
+}
+/*les formulaires page login, register, */
+.form{
+	width: 60%;
+	padding: 20px;
+    margin: 30px auto;
+    margin-bottom: 15px;
+    color:#fff;
+    background: rgb(0,0,0,0.8);
+    border: 5px solid rgb(33,32,32);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(160,10,18);
+}
+.formRegister,
+.formChalet{
+    margin-top: 120px;
+}
+#formPost,
+.formConnect{
+    margin-top: 150px;
+}
+#formLogin{
+    position: absolute;
+    top: 180px;
+    left: 220px;    
+}
+
+.inputBox input,
+.inputBox select,
+.inputBox textarea{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    color: rgb(247, 225, 225); 
+}
+.inputBox select option{
+    color: #000;
+}
+.inputBox label{
+    text-align: left;
+}
+
+/*boutton se souvenir de moi page login*/
+#checkbox input,
+#checkbox label{
+    display: inline-block;    
+}
+#checkbox input{
+    width: 10%;
+    margin-left: -90px;
+}
+#checkbox label{
+    width: 85%;
+    margin-left: -20px;
+}
+
+/*formulaire d'ajout de chalat page addCatalogueChalet*/
+#addServiceChalet{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    display: table;    
+} 
+#addService_contenu{
+    left:400px;
+    top: -70px;
+    width: 30%;
+    text-align: left;
+}
+#addService_contenu input {
+    width: 10%;
+    margin: 5px;  
+}
+
+button[type="submit"],
+button[type="reset"]{
+    width: 150px;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgb(160,10,18);
+    color:rgb(247, 225, 225); 
+    cursor: pointer;    
+}
+
+button[type="submit"] a,
+button[type="reset"] a{
+    color:rgb(247, 225, 225);
+}
+button[type="submit"]:hover{
+    background: rgb(18, 145, 18);
+}
+button[type="reset"]:hover{
+    background: rgb(255, 0, 0);
+}
+#buttonEditProfile{
+    width: 200px;
+}
+.erreur,
+.success{
+    width: 50%;
+    padding:5px;
+    margin-top:10px;    
+}
+.erreur{
+    color: rgb(255,0,0); 
+}
+.success{
+    color:rgb(18, 145, 18);
+}
+
+
+
+
+
+
+
+
+
+

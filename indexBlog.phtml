@@ -1,0 +1,15 @@
+<body class="bodyPost">
+	<section id="listArticles">
+	
+		<?php foreach ($results as $key => $value) :?>
+			<section id="post">
+				<h3 class="titre"><i class="far fa-hand-point-right"></i> <a  href="detailsPostBlog.php?id=<?=intval($value['id_posts']) ?>"><?=htmlspecialchars($value['title']) ?></a></h3>
+				<p class="content"><?=substr(htmlspecialchars($value['content']),0, 250).'&nbsp;[...]' ?></p>
+				<p class="auteur">Rédiger par: <?=htmlspecialchars($value['pseudo']) ?></p>
+				<p class="date"> Le: <?=htmlspecialchars($value['publication_date']) ?></p>
+				<p class="readMore"><span><i class='fas fa-plus-circle'></i> <a href="detailsPostBlog.php?id=<?=intval($value['id_posts']) ?>">Lire la suite</a></span></p>
+			</section>
+		<?php endforeach; ?>
+
+	</section>
+</body>

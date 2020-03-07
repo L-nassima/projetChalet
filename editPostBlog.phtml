@@ -1,0 +1,24 @@
+<section class="editArticle">
+    <form method="POST" class="form">
+        <h2>Mise à jour de l'Article</h2>
+        <input type="hidden" name="id_posts" value="<?= $_GET['id'] ?>">
+        
+        <div class="inputBox">
+            <input type="text" name="newTitle" id='newTitle' value="<?= $result['title'] ?>"><br>
+        </div>
+
+        <div class="inputBox">        
+            <textarea id="newPost" name="newPost" rows="15" cols="60"><?= $result['content'] ?></textarea>
+        </div>
+
+        <div class="inputBox">        
+            <input type="text" name="auteur" value='<?=$result['pseudo']; ?>'>
+        </div>
+
+        <div class="inputBox">
+            <button type="submit" name="submit"  class="button button-primary">Mettre à jour</button>
+            <button type="reset" name="reset"  class="button button-cancel"><a href='indexBlog.php?id=<?= $result['id_customer']; ?>'>Annuler</a></button>
+        </div>
+
+    </form>
+</section>

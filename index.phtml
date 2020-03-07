@@ -1,0 +1,175 @@
+<section class="slider-container">
+    <button id="btnPrev"><i class="fas fa-arrow-left" id="sliderPrev"></i></button>
+    <button id="btnNext"><i class="fas fa-arrow-right" id ="sliderNext"></i></button>
+
+    <ul class="images-slider">
+        <li class="display-slider visible">
+            <img src="img/slider/chalet.jpg" alt="l'image principale du chalet"/>                
+        </li>
+        <?php foreach($data as $chalet) :?>
+        <li class="display-slider">
+            <img src="img/slider/<?=$chalet["chalet"] ?>" alt="<?= $chalet["name"] ?>"/>            
+        </li>
+        <?php endforeach; ?>   
+    </ul>
+</section>
+
+<section id="home-section">
+    <section id="home_form">                 
+        <div id="titre" class="input input_groupe">
+            <h3 class="titre">Recherche</h3>
+        </div> 
+
+        <form method="GET" action="searchChalet.php">
+            <div class="input_groupe">
+                <select id="massif" name="massif" class="input">
+                    <option value="Alpes du Nord">Massif</option>
+                    <option value="Alpes du Nord">Alpes du Nord</option>
+                    <option value="Alpes du Sud">Alpes du Sud</option>
+                    <option value="Valais">Valais</option>
+                    <option value="Vosges">Vosges</option>
+                </select>
+            </div>
+
+            <div class="input_groupe">
+                <select id="station" name="station" class="input">
+                    <option Value="">Station</option>
+                    <option Value="Chamonix">Chamonix</option>
+                    <option Value="Isola 2000">Isola 2000</option>
+                    <option Value="Les Gets">Les Gets</option>
+                    <option Value="Les Arcs">Les Arcs</option>
+                    <option Value="Verbier">Le Verbier</option>
+                    <option Value="La Plagne">La Plagne</option>
+                    <option Value="La bresse">La bresse</option>
+                    <option Value="Les Orres">Les Orres</option>
+                </select>
+            </div>
+
+            <div class="input_groupe">
+                <select id="Nb_Pers" name="Nb_Pers" class="input">
+                    <option value="">Nb.Pers</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </div>
+
+            <div class="input_groupe">
+                <select id="duree_sejour" name="duree_sejour" class="input">
+                    <option value="">Durée de séjour</option>
+                    <option value="2">2</option>
+                    <option value="4">4</option>
+                    <option value="7">7</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                </select>
+            </div>
+
+            <div class="input_groupe">
+                <div class="input" id="price"><span>Prix maximum</span></div>                
+                <div id="prix_Chalet">
+                    <p>Valeur: <span id="valueRange"></span> €</p> 
+                    <input type="range" id="budget" class="myRange" name="price" value="500"  min="300" max="2000" step="50">                
+                </div>   
+            </div>
+
+            <div class="input_groupe">
+                <div class="input" id="service"><span>Services</span></div>
+                <div id="service_contenu">
+                    <label><input type="checkbox" name="services[]" value="sauna"><span>Sauna</span></label><br>
+                    <label><input type="checkbox" name="services[]" value="jacuzzi"><span>Jacuzzi</span></label><br>
+                    <label><input type="checkbox" name="services[]" value="piscine"><span>Piscine</span></label><br>
+                    <label><input type="checkbox" name="services[]" value="hammam"><span>Hammam</span></label>
+                </div>
+            </div>
+            <div class="input_groupe">
+                <input type="submit" value="Rechercher" id="submit_button">
+            </div>
+            
+        </form>
+    </section>
+       
+    <section id="thematique">
+            <h2 class="thematique-titre">Vacances <span>bien-être</span></h2>
+            <div class="thematique-section">
+                <a href="chalet.php?id=sauna">
+                    <div class="image">
+                        <img src="img/slider/sauna1.jpg" id="service" class="thematique-sauna" alt="image d'un sauna">
+                    </div>
+                    <div class="thematique-masque"></div>
+                    <div class="titre">Chalet <br>avec Sauna</div>
+                </a>
+            </div>
+
+            <div class="thematique-section">
+                <a href="chalet.php?id=jacuzzi">       
+                    <div class="image">
+                        <img src="img/slider/jacuzzi1.jpg" id="service" class="thematique-jacuzzi" alt="image d'un jacuzzi">
+                    </div>
+                    <div class="thematique-masque"></div>
+                    <div class="titre">Chalet <br>avec Jacuzzi</div>
+                </a>
+            </div>
+
+            <div class="thematique-section">
+                <a href="chalet.php?id=piscine">
+                    <div class="image">
+                        <img src="img/slider/piscine1.jpg" id="service" class="thematique-piscine" alt="image d'une piscine">
+                    </div>
+                    <div class="thematique-masque"></div>
+                    <div class="titre">Chalet <br>avec Piscine</div>
+                </a>
+            </div>
+
+            <div class="thematique-section">
+                <a href="chalet.php?id=hammam">
+                    <div class="image">
+                        <img src="img/slider/hammam1.jpg" id="service" class="thematique-hammam" alt="image d'un hammame">
+                    </div>
+                    <div class="thematique-masque"></div>
+                    <div class="titre">Chalet <br>avec Hammam</div>
+                </a>
+            </div>                
+    </section>
+</section>
+
+<section>
+    <hr class="dividingLine-top">
+    <h2 class="thematique-titre">Location de votre<span> chalet de montagne</span></h2>
+    <hr class="dividingLine-bottom">
+    <p class="introduction">Pour conjuguer nature, confort, espace et bien être, rien de tel qu'un <strong>séjour en chalet</strong>... 
+    Notre sélection <stong>"Chalet"</strong> offre un panel de logements de grandes capacités pouvant accueillir 
+    familles ou groupes d'amis en recherche d'un havre de paix. La saison d'été est le moment idéal
+    pour découvrir le charme de ces <strong>chalets très spacieux de montagne</strong> dont les intérieurs sont décorés
+    avec goût et authenticité, avec à disposition un coin cheminée ou un poêle à bois pour les moments
+    chaleureux et conviviaux en soirée. C'est dans un environnement magnifique que vous pourrez vivre
+    pleinement votre séjour en toute quiétude... </p>
+</section>
+
+<section id="bestChalet">
+    <hr class="dividingLine-top">
+    <h2 class="thematique-titre">La selection de nos<span> meilleurs chalets</span></h2>
+    <hr class="dividingLine-bottom">          
+    <?php foreach($best as $chaletBest) :?>
+        <article class="detailsBestChalet">
+            <h3><a href="detailChalet.php?id=<?=$chaletBest['id_chalet'] ?>"><?= $chaletBest["name"] ?></h3></a>
+            <p class="detailChalet"><?=$chaletBest['massif'] ?> / <?=$chaletBest['station'] ?></p>
+            <div class="chaletPromo">
+                <img src="img/slider/<?=$chaletBest["chalet"] ?>" class="imgPromo" alt="image du chalet en promotion">        
+                <div class="masque_promo"></div>
+                <div class="promo_infos">
+                    <p>7 nuits</p>
+                    <p>à partir de</p>
+                    <p><span><?=$chaletBest['price'] ?>€</span></p>     
+                </div>   
+                <div>    
+                    <button class="buttonPromo"><a href="detailChalet.php?id=<?=$chaletBest['id_chalet'] ?>">j'en profite</a></button>
+                </div>
+            </div>
+        </article>                                                                    
+    <?php endforeach; ?>
+</section>
+
+

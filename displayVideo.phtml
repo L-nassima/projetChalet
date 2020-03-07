@@ -1,0 +1,19 @@
+<body class="videos">
+    <section id="videos">
+        <hr class="dividingLine-top">
+        <h2 class="thematique-titre">les Activités dans l'ensemble <span>de nos stations</span></h2>
+        <hr class="dividingLine-bottom">
+
+        <?php
+            $pdo = connect();
+            $req=$pdo->query('SELECT * FROM videos');
+            
+            while($video = $req->fetch()) {
+            ?>
+            <iframe class="ifram" width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video['url_video']; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <?php
+            }
+            
+        ?>
+    </section>
+</body>

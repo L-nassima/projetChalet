@@ -1,0 +1,31 @@
+<section class="box">
+    <h2 class="loginTitle">Espace client</h2>
+    <p class="loginInfo">L'espace client vous permet de bénéficier d'avantages fidélité et de donner votre avis sur les produits.</p>
+    <form method="POST" action="login.php" class="form" id="formLogin">
+        <h2>Déjà Membre ? <span>Identifiez-vous</span> </h2>
+        <p>Les champs précédés d'une étoile (*) sont obligatoires</p>
+
+        <div class="inputBox">
+            <input type="mail" name="email" id="email" placeholder="email *">
+        </div>
+            
+        <div class="inputBox">
+            <input type="password" name="password" id="password" placeholder="Mot de passe *">
+        </div>
+        
+        <div class="inputBox" id="checkbox">
+            <input type="checkbox" name="remember-me" id="remember-me">
+            <label for="remember-me">Se souvenir de moi</label>
+        </div>
+                    
+        <div>
+            <?php if(!empty($errors)) :?>
+                <p class='erreur'><?= $errors; ?></p>
+            <?php endif; ?>
+        </div>
+        
+        <button type="submit" name="submit">Connexion</button>
+        <p class='inscriptionCustomer'>Vous n'avez pas encore de compte chez nous ? <a href="register.php">Inscrivez-vous gratuitement</a></p>
+    </form>
+</section>
+

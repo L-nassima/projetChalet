@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">            
+
+    <?php
+        include('./head/head.php');
+    ?>
+
+    <body onload='displayDate()'>
+        <!-- En-tête commune de l'application -->
+        <header>
+            <?php
+                include('./header/header.php');
+            ?>
+        </header>
+        
+        <main>
+            <!-- Chargement du template PHTML spécifié par le programme PHP -->
+            <?php include $template.'.phtml' ?>
+        </main>
+
+        <!-- Pied de page commun de l'application -->
+        <footer>
+        <?php
+            include('./footer/footer.php');
+        ?>
+        </footer>
+
+        <script src="js/slider.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/utilities.js"></script>
+        
+    </body>
+</html>

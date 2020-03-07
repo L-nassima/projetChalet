@@ -1,0 +1,26 @@
+<table id="adminBlog">
+    <tr>
+        <th colspan="6">Détails des articles du Blog</th>
+    </tr>
+
+    <tr class="fieldsTable">
+        <td>N° de l'article</td>
+        <td>Titre</td>
+        <td>Article</td>
+        <td>Auteur</td>
+        <td>Date de publication</td>
+        <td>N° de chalet</td>
+    </tr>
+
+    <?php  foreach($results as $post): ?>
+        <tr>
+            <td><a href="detailsPostBlog.php?id=<?= intval($post['id_posts'])?>"><?= $post["id_posts"]; ?></a></td>
+            <td><?= htmlspecialchars($post["title"]); ?></td>
+            <td><?= substr(htmlspecialchars($post["content"]),0,200); ?> [...]</td>
+            <td><?= htmlspecialchars($post["pseudo"]); ?></td>
+            <td><?= htmlspecialchars($post["publication_date"]); ?></td>
+            <td><?= htmlspecialchars($post["id_chalet"]); ?></td>
+            <td><a href="deletPostBlog.php?id=<?= intval($post['id_posts']);?>"><i class="fas fa-times"></i></a></td>
+        </tr>
+    <?php endforeach; ?>
+</table>

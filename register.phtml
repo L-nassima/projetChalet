@@ -1,0 +1,104 @@
+<form method="POST" action="register.php" class="form formRegister" >
+    <h2>Nouveau client ? <span>Inscrivez-vous gratuitement</span></h2>
+    <p>Les champs précédés d'une étoile (*) sont obligatoires</p>     
+            
+    <div class="inputBox">
+        <input type="text" name="firstName" placeholder="Nom *" value="<?php if(isset($firstName)) echo $firstName; ?>">
+        <div>
+            <?php if(!empty($errors['firstName'])) :?>
+                <p class='erreur'><?= $errors['firstName']; ?></p>
+            <?php endif; ?>
+        </div>
+    </div>
+ 
+    <div class="inputBox">
+        <input type="text" name="lastName" placeholder="Prénom *" value="<?php if(isset($lastName)) echo $lastName; ?>">
+        <div>
+            <?php if(!empty($errors['lastName'])) :?>
+                <p class='erreur'><?= $errors['lastName']; ?></p>
+            <?php endif; ?>
+        </div>
+    </div>
+
+    <div class="inputBox">
+        <input type="text" name="pseudo" placeholder="Pseudo *" value="<?php if(isset($pseudo)) echo $pseudo; ?>">
+        <div>
+            <?php if(!empty($errors['pseudo'])) :?>
+                <p class='erreur'><?= $errors['pseudo']; ?></p>
+            <?php endif; ?>
+        </div>
+    </div> 
+
+    <div class="inputBox">
+        <input type="password" name="password" placeholder="Mot de passe *">
+        <div>
+            <?php if(!empty($errors['password'])) :?>
+                <p class='erreur'><?= $errors['password']; ?></p>
+            <?php endif; ?>
+        </div>
+    </div>
+
+    <div class="inputBox">
+        <input type="password" name="password_confirm" placeholder="Mot de passe de confirmation *">
+        <div>
+            <?php if(!empty($errors['password_confirm'])) :?>
+                <p class='erreur'><?= $errors['password_confirm']; ?></p>
+            <?php endif; ?>
+        </div>
+    </div>
+
+    <div class="inputBox">
+        <input type="text" name="email" id="email" placeholder= "E-mail *" value="<?php if(isset($email)) echo $email; ?>">
+        <div>
+            <?php if(!empty($errors['email'])) :?>
+                <p class='erreur'><?= $errors['email']; ?></p>
+            <?php endif; ?>
+        </div>
+    </div>
+
+    <div class="inputBox">
+        <input type="email" name="email_confirm" placeholder= "E-mail de confirmation *" value="<?php if(isset($email_confirm)) echo $email_confirm; ?>">
+        <div>
+            <?php if(!empty($errors['email_confirm'])) :?>
+                <p class='erreur'><?= $errors['email_confirm']; ?></p>
+            <?php endif; ?>
+        </div>
+    </div>
+
+    <div class="inputBox">
+        <input type="text" name="adress" placeholder="Adresse postale *"value="<?php if(isset($adress)) echo $adress; ?>" >
+        <div>
+            <?php if(!empty($errors['adress'])) :?>
+                <p class='erreur'><?= $errors['adress']; ?></p>
+            <?php endif; ?>
+        </div>
+    </div>
+
+    <div class="inputBox">
+        <input type="text" name="postal_code" placeholder="Code postale *"value="<?php if(isset($postal_code)) echo $adress; ?>" >
+        <div>
+            <?php if(!empty($errors['postal_code'])) :?>
+                <p class='erreur'><?= $errors['postal_code']; ?></p>
+            <?php endif; ?>
+        </div>
+    </div> 
+
+    <div class="inputBox">
+        <input type="tel" name="phone" placeholder=" Numéro de téléphone *" pattern="0[1-9][0-9]{8}" value="<?php if(isset($phone)) echo $phone; ?>">
+        <div>
+            <?php if(!empty($errors['phone'])) :?>
+                <p class='erreur'><?= $errors['phone']; ?></p>
+            <?php endif; ?>
+        </div>
+    </div>
+
+    <div>
+        <?php if(isset($success)) :?>
+            <p class='success'><?= $success; ?></p>
+        <?php endif; ?>
+    </div>
+
+    <button type="submit" name="submit">Je m'inscris</button>
+    <button type="reset" name="reset"><a href="index.php">Annuler</a></button>
+            
+</form>

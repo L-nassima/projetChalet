@@ -1,0 +1,1072 @@
+* {
+    -o-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-sizing: border-box;
+    -khtml-sizing: border-box;
+	box-sizing: border-box;
+	outline: none;
+	text-decoration: none;
+	-webkit-transition: all .2s ease 0s;
+	transition: all .2s ease 0s;
+}
+
+html {
+    font-size:62.5%;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.8rem;
+    line-height: 3rem;
+    font-family: 'Roboto', sans-serif;
+    background: rgb(248, 245, 245); 
+}
+main {
+    max-width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 25px; 
+}
+a {
+    text-decoration: none;
+}
+ul li {
+    list-style-type: none;  
+}
+table, #post, #comment {
+    font-family: 'Cardo', serif;
+}
+
+/*slider principale de la page index*/
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    text-align: center;
+    margin-top: 80px;
+    padding: 0;
+    overflow: hidden;
+    border: 10px solid rgb(33,32,32);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 5px 5px 5px rgb(160,10,18);
+    box-shadow: 5px 5px 5px rgb(160,10,18);
+}
+.slider-container .images-slider  {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: auto;    
+}
+#btnPrev, #btnNext {
+    position:absolute;
+    border: none;
+    font-size: 3rem;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    z-index: 1;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;   
+}
+#btnPrev {
+    top: 45%;
+    left: 10px;
+}
+#btnNext {
+    top: 45%;
+    right: 10px;
+}
+.display-slider {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    visibility: hidden;
+}
+.visible {
+    visibility: visible;
+    animation: ani 3s linear;
+}
+.display-slider img { 
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes ani{
+    0%{transform: scale(1.2);}
+    20%{transform: scale(1);}
+    100%{transform: scale(1);}
+}
+
+/*section de recherche de la page index*/
+#home-section,
+#bestChalet,
+#bestPromotion  {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+}
+
+/*formulaire de recherche de la page index*/
+#home_form { 
+    display: inline-block;
+    position: relative;
+    width: 30%;
+    margin: 160px 0px 10px;
+    vertical-align: top;    
+}
+
+/*section de recherche selon le service proposé de la page index*/
+#thematique{
+    display: inline-block;
+    width: 60%;
+    vertical-align: top;
+}
+ .image #service {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;    
+ }
+ .thematique-section {
+    display: inline-block;
+    position: relative;
+    margin: 5px;
+    width: 48%;
+ }
+ .thematique-titre, 
+ #bestPromotion h2,
+ #videos h2
+ {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3rem;
+    line-height: 2rem;
+    font-weight: normal;
+    font-style: italic;    
+ }
+ .thematique-titre,
+ #displayChalet {
+    margin-top: 100px;
+ }
+ .thematique-titre{
+     line-height: 3rem;
+ }
+ 
+ .introduction {
+    text-align: justify;
+    margin: 40px 0;
+    font-size: 1.8rem;
+    color: rgb(46, 44, 44);
+
+}
+ .dividingLine-top,
+ .dividingLine-bottom{
+     width: 40%;
+     box-shadow: 3px 2px 5px rgb(33,32,32);
+     
+ }
+ .dividingLine-top{
+    margin-top: 80px;
+    margin-bottom:-70px;  
+ }
+ .dividingLine-bottom{
+    margin-bottom: 30px;
+}
+
+
+.thematique-titre span,
+#conditions span,
+#adminBlog th,
+#sectionChalet a:hover,
+#bestChalet h2 span,
+#bestPromotion h2 span,
+#videos h2 span,
+#detailsChalet p a,
+#Contact p span,
+.box p a,
+form h2 span,
+#adminBlog .fas,
+#post h3 a,
+#post .readMore a,
+#displayChalet h3,
+#bestChalet h3 a,
+#bestPromotion h3 a,
+#detailsChalet h3,
+#post h2,
+#post .auteur span,
+#comment .content a,
+#sectionProfile h2{
+    color: rgb(160,10,18);
+ }
+
+ .thematique-section .titre {
+    position: absolute;
+    top: 10px;
+    left: 80px;
+    color: #fff;
+ }
+ .thematique-masque {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 35%;
+    background: rgba(0 , 0, 0, 0.6);
+ }
+ .thematique-section:hover .thematique-masque {
+    width: 100%;
+    height: 95%;
+    transition: 1s;     
+ }
+
+ /*Affichage des chalet selon le service selectionné page chalet*/
+#displayChalet .description{
+    padding: 20px;
+    text-align: justify;
+}
+#displayChalet .detailChalet,
+#displayChalet h3,
+#bestChalet,
+#bestPromotion,
+.form h3,
+#adminBlog th,
+.customersInfo td,
+#post h2,
+#post .auteur span,
+#detailsChalet h3
+{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#bestChalet h3 a,
+#bestPromotion h3 a,
+#comment .content a
+{
+    text-align: center;
+}
+#bestChalet .detailsBestChalet,
+#bestPromotion .detailsBestPromotion{
+    display: inline-block;
+    width: 45%;
+    margin: 5px;
+}
+#bestChalet h3,
+#bestChalet p,
+#bestPromotion h3,
+#bestPromotion p {
+    line-height: 1.2rem;
+    font-size: 1.8rem;
+}
+#detailsChalet section{
+    margin-top: 50px;
+}
+/*page chaletNotFound*/
+.chaletNotFound, #sectionChalet{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+#sectionChalet a{
+    color: #000;
+}
+.chaletNotFound #textDispo,
+.chaletNotFound #home-section{
+    display: inline-block;
+    vertical-align: middle;
+}
+.chaletNotFound #textDispo{
+    width: 40%;
+    padding: 0 20px;
+    text-shadow: 3px 3px 2px rgb(160,10,18), 0 0 1em rgb(33,32,32), 0 0 0.2em rgb(33,32,32);     
+}
+.chaletNotFound #home-section{
+    width: 50%;    
+}
+.chaletNotFound #home_form{
+    width: 100%;
+} 
+#displayChalet .imgChalet{ 
+    width: 450px;
+    height: 300px;
+ }
+
+/*page detailChalet*/
+#imagesMiniatures{
+    width: 100%;
+    height: 140px;
+    text-align: center;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 5px 5px 10px rgb(27, 26, 26); 
+    box-shadow: 5px 5px 10px rgb(27, 26, 26);
+}
+ #pictures {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    justify-content: space-around;
+    padding-top:20px;
+    margin: 20px auto;
+    padding-right: 30px;    
+ }
+ #pictures #image_chalet {
+    width: 120px;
+    height: 100px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 2px solid rgb(46, 44, 44);
+}
+.image_chalet {
+    opacity: 0.6;
+}
+.active,
+.image_chalet:hover {
+    opacity: 1;
+}
+.image_chalet:hover{
+    transform: scale(1.3);
+}
+.cursor {
+    cursor: pointer;    
+}
+#detailsChalet {
+    text-align: left;
+}
+#Contact p span,
+#Contact .information,
+#prestation h4,
+#info-station h4{
+    font-weight: bold;
+    font-style: italic;
+}
+#Contact .information{
+    margin-top: -15px;
+}
+
+.openingTime{
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-top: -20px;
+}
+#prestation .far{
+    font-size: 3.5rem;
+    color: rgb(33,32,32);
+    margin-right: 5px;
+}
+#info-station .info {
+    display:inline-block;
+    width: 45%;
+    text-align: left;
+}
+#pageLink p{
+    line-height: 1.8rem;
+}
+
+/*Page login*/
+.box{
+    position: relative;
+    width: 100%;
+    height: 900px;
+    text-align: center;
+    margin: 100px auto;
+    background-image:url(../img/images/montagne.jpg);      
+}
+/* page customerProfile*/
+#profileHomePage{
+    background-image:url(../img/images/chalet_nuit_hiver.jpeg);       
+}
+.videos{
+    background-image:url(../img/images/paysage.jpg);      
+}
+#addVideo{
+    background-image:url(../img/images/kayak.jpg);
+}
+.box,
+#profileHomePage,
+.videos,
+#addVideo,
+.bodyPost,
+#fondPost{
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#profileHomePage{
+    background-position: center;
+}
+#profileHomePage,
+.videos,
+.bodyPost, #fondPost{
+    background-attachment: fixed;
+} 
+#videos{    
+    margin: 200px auto 100px;
+}
+.addVideo{
+    text-align: center;
+    margin-top:10px; 
+    font-size: 2rem;
+    font-weight: bold;
+    font-style: italic;
+    color: rgb(18, 145, 18);
+}
+#videos .ifram{
+    margin: 5px;
+    border: 6px solid rgb(46, 44, 44);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 5px 5px 5px rgb(160,10,18);
+    box-shadow: 5px 5px 5px rgb(160,10,18);
+}
+#homePage {
+    margin-top: 150px;
+    color: #fff;
+}
+#homePage .image_client{
+    width: 200x;
+    height: 200px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: 5px solid rgb(160,10,18);    
+}
+
+#homePage h1,
+#homePage h2,
+#homePage #currentDate,
+#homePage #currentHour,
+#videos .thematique-titre{
+    font-family: 'Kaushan Script', cursive;
+    font-size: 4rem;
+    line-height: 4rem;
+    text-shadow: 1px 1px 2px rgb(160,10,18), 0 0 1em rgb(160,10,18), 0 0 0.2em rgb(160,10,18);
+}
+#homePage h1{
+    font-size: 5rem;
+    letter-spacing: 0.3rem;
+}
+#videos .thematique-titre span
+{
+    text-shadow: 1px 1px 2px rgb(46, 44, 44), 0 0 1em rgb(46, 44, 44), 0 0 0.2em rgb(46, 44, 44);
+}
+#homePage h2 span{
+    text-shadow: 1px 1px 1px #fff, 0 0 1em #fff, 0 0 0.2em #fff;
+}
+#homePage #currentDate{
+    margin:50px 0px 10px;
+}
+#homePage #currentHour{
+    margin: 25px 0;
+}
+
+.box .loginTitle,
+.box .loginInfo
+ {
+    padding-left: 50px;
+    color: #fff;
+}
+.box .loginTitle {
+    text-align: left;
+    padding-top: 30px;
+}
+.box .loginInfo{
+    width: 50%;
+    padding-bottom: 10px;
+    text-align: justify;
+    line-height: 2rem;
+       
+}
+.arrow-down {
+    width: 20%;
+    height: 0;
+    text-align: center;
+    margin:-10px auto 0;
+    border-right: 16px solid transparent;
+    border-left: 16px solid transparent;
+    border-top: 20px solid #fff;
+}
+
+/*page chalet, chaletSelection, chaletPromotion et page chaletSelectionAdmin*/
+#displayChalet .chaletPromo,
+#bestChalet .chaletPromo,
+#bestPromotion .chaletPromo {
+    position: relative;
+    height: 300px;       
+}
+#bestChalet .chaletPromo,
+#bestPromotion .chaletPromo{
+    width: 100%;
+}
+#displayChalet .chaletPromo{
+    width: 450px;
+}
+#displayChalet .imgPromo,
+#bestChalet .imgPromo,
+#bestPromotion .imgPromo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+#displayChalet .masque_promo,
+#bestChalet .masque_promo,
+#bestPromotion .masque_promo{
+    position:absolute;
+    top: 0px;
+    right: 0px;
+    width: 40%;
+    height: 100%;
+    background: rgba(0 , 0, 0, 0.6);
+    border-left: 2px solid #fff;
+}
+#displayChalet .imgChalet,
+#displayChalet .imgPromo,
+#bestChalet .imgPromo,
+#bestPromotion .imgPromo, 
+#displayChalet .masque_promo,
+#bestChalet .masque_promo,
+#bestPromotion .masque_promo,
+#displayChalet .chaletPromo:hover .masque_Admin,
+.buttonPromo,
+.buttonEdit, .buttonCancel{
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#displayChalet .chaletPromo:hover .masque_Admin{
+    position:absolute;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0 , 0, 0, 0.6);
+    cursor: pointer;
+}
+#displayChalet .promo_infos,
+#bestChalet .promo_infos,
+#bestPromotion .promo_infos{
+    position:absolute;
+    top: 0px;
+    right: 0px;
+    width: 30%;
+    height: 80%;
+    line-height: 2rem;
+    margin-right: 15px;
+    padding-top: 20px;
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+    font-style: italic;    
+}
+#bestChalet .promo_infos{
+    margin-top: 35px;
+}
+#bestChalet .promo_infos p,
+#bestPromotion .promo_infos p{
+    line-height: 2.5rem;    
+}
+.buttonPromo{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 40%;
+    height: 20%;
+    padding-left:10px;
+    color: #fff;
+    font-size: 2rem;
+    font-style: italic;
+    border: none;
+    background-color: rgb(160,10,18);    
+}
+.buttonPromo a {
+    color: #fff;
+}
+.buttonPromo:hover {
+    background-color: rgb(18, 145, 18);
+}
+
+#displayChalet .chaletPromo:hover .masque_promo,
+#bestChalet .chaletPromo:hover .masque_promo,
+#bestPromotion .chaletPromo:hover .masque_promo{
+    width: 100%;
+    transition: 1s;
+    cursor: pointer;
+}
+#displayChalet .reduction,
+#bestPromotion .reduction{
+    width: 80%;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: #000;
+    background-color: #fff;    
+}
+#displayChalet .reduction{
+    transform: skewX(10deg) skewY(10deg);
+}
+.buttonEdit, .buttonCancel{
+    width: 50%;
+    height: 20%;
+    position: absolute;
+    bottom: 0px;
+    font-size: 2rem;
+    font-style: italic;
+    border: none;
+}
+.buttonEdit{
+    left: 0;
+    background-color:rgb(18, 145, 18);
+}
+.buttonCancel{
+    right: 0;
+    background-color: rgb(160,10,18);
+}
+.buttonEdit a, .buttonCancel a{
+    color:#fff;
+}
+
+/*Page adminBlog, infoProfileCustomerAdmin */
+#adminBlog {
+    border-collapse: collapse; 
+    width: 100%;
+    text-align: center;
+    margin: 150px auto;           
+}    
+#adminBlog td,
+#adminBlog th,
+#infoProfile td,
+#infoProfile th {
+    padding: 10px;
+    background-color : #f4f4f5;
+    border:  1px solid lightgray;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 5px 5px 10px rgb(160,10,18);
+    box-shadow: 5px 5px 10px rgb(160,10,18);    
+}
+#sectionProfile,
+#listArticles{
+    margin-top: 10%;
+}
+
+/*Page detailsPostBlog */
+#post{
+    position: relative; 
+    width: 100%;
+    padding: 20px 20px 0;
+    margin: 30px auto 15px;
+    color:#fff;
+    background: rgb(0,0,0,0.7);
+    border:  5px solid rgb(33,32,32);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 5px 5px 5px rgb(160,10,18);
+    box-shadow: 5px 5px 5px rgb(160,10,18);    
+}
+#post .content{
+    text-align: justify;
+}
+#post .auteur,
+#post .date{
+    text-align: left;
+    line-height: 1.2rem;
+}
+#post .auteur,
+#post .date,
+#post .newPost,
+#post .editPost{
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+#post .auteur{
+    margin-top: 30px;
+}
+#post .readMore:hover .fas {
+    transform: scale(1.5);
+    margin-right: 5px;
+}
+#post .newPost,
+#post .editPost  {
+    position: absolute;
+    bottom: 15px;
+    color: #fff;   
+}
+#post .newPost{
+    right: 80px;
+}
+#post .editPost{
+    right: 20px;
+}
+
+#post a:hover{
+    transform: scale(1.2) rotate(360deg);
+    transition: 2s;
+}
+#post .newPost:hover,
+#post a:hover
+{
+    color:rgb(18, 145, 18);    
+}
+#post .editPost:hover{
+    color:rgb(160,10,18);
+}
+#comment {
+    text-align: left;
+    margin: 5% 0;
+    
+}
+#comment h3{
+    text-shadow: 1px 1px 2px rgb(160,10,18), 0 0 1em rgb(33,32,32), 0 0 0.2em rgb(33,32,32);
+}
+#comment .auteur,
+#comment .date{
+    font-size: 1.3rem;
+    line-height: 1rem;
+}
+#formComment{
+    display: none;
+}
+#commentPlus{
+    text-align: left;
+}
+#commentPlus button{
+    padding: 10px;
+    font-style: italic;
+    color: rgb(78, 78, 78);
+    background-color: #d0d2d4;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+.bodyPost{
+    background-image:url(../img/images/neige.jpg);
+}
+#fondPost{
+    background-image:url(../img/images/index.jpg);
+}
+
+/*Page detailsProfileCustomer*/
+#infoProfile{
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 1.8rem;
+    font-style: italic;
+    border-collapse: collapse;
+    -webkit-box-shadow: 5px 5px 5px rgb(160,10,18);
+    box-shadow: 5px 5px 5px rgb(160,10,18);    
+}   
+#sectionProfile h2,
+.detailProfil {
+    font-style: italic;
+    font-size: 2.5rem;
+}  
+#buttonProfile{
+    width: 25%;
+    text-align: center;
+    padding: 20px 0;
+}
+#sectionPost, #chalet{
+    margin-top: 150px;
+}
+
+/* La pagination */
+#pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.lien_pagination {
+    text-decoration: none;
+}
+
+span.active {
+    color: red;
+}
+
+/*Le responsive*/
+@media screen and (max-width: 1200px) {
+    /*section de recherche page index*/ 
+    #home_form,
+    #thematique
+    {
+        width: 80%;
+        display: block;
+        text-align: center;
+        margin: 100px auto;
+    }
+   .chaletNotFound{
+       margin-top: 50px;
+   }
+    #homePage h1,
+    #homePage h2,
+    #homePage #currentDate{
+        font-size: 3rem;
+        line-height: 3rem;
+    }         
+}   
+
+@media screen and (max-width: 1024px) {
+    #thematique,
+    .dividingLine-top,
+    .dividingLine-bottom{
+        width: 100%;
+    }
+   
+    #displayChalet td{
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+    }
+    #imagesMiniatures{
+        width: 100%;
+        height: 300px;    
+    }
+    #pictures {
+        display: block;
+        width: 100%;
+        height: 100%;    
+    }
+    .thumbnailImage{
+        display: inline-block;
+        width: 30%;
+        margin:10px 5px;
+    }
+    .form {
+        width: 80%;
+    }
+    #formLogin{
+        top: 200px;
+        left: 50px;    
+    }
+    #displayChalet .description,
+    #displayChalet .chaletPromo,
+    #displayChalet .imgChalet
+    {
+        display: block;
+        width: 100%;
+        margin: auto;
+    }
+    #displayChalet .chaletPromo{
+        text-align: center;
+    }
+    #addService_contenu{
+        left:200px;
+        top: -140px;
+        width: 50%;
+        text-align: left;
+    }
+    #infoProfile,
+    #buttonProfile{
+        width: 80%;
+        margin: 0 auto;
+    }
+   #adminBlog th,
+   #adminBlog td{
+       font-size: 1.3rem;
+   }       
+}
+
+@media screen and (max-width: 768px) {
+    #home_form{
+        width: 100%;
+    }
+
+    .chaletNotFound,
+    .formRegister,
+    #displayChalet,
+    #listArticles{
+        margin-top: 150px;
+    }
+    .chaletNotFound #textDispo{
+        font-size: 1.5rem;
+    }
+
+    .thematique-section,
+    #bestChalet .detailsBestChalet,
+    #bestPromotion .detailsBestPromotion,
+    .chaletNotFound #textDispo,
+    .chaletNotFound #home-section,
+    #videos .ifram{
+        display: block;
+        text-align: center; 
+    }
+
+    .thematique-section,
+    #bestChalet .detailsBestChalet,
+    #bestPromotion .detailsBestPromotion{
+        width: 90%;
+        margin: 10px auto;
+    }
+    .chaletNotFound #textDispo,
+    .chaletNotFound #home-section,
+    #infoProfile,
+    #buttonProfile{
+        width: 100%;
+        margin: 0 auto;    
+    }
+    #videos .ifram{
+        width: 100%;
+        margin: 20px auto;
+    }
+    
+    #imagesMiniatures{
+        width: 100%;
+        height: 500px;    
+    }
+    #pictures {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        margin: 20px auto;
+        padding-right: 30px;    
+    }
+    .thumbnailImage{
+        display: inline-block;
+        width: 45%;
+        margin:25px 5px 10px;
+    }
+   
+    #description,
+    #contact p{
+        text-align: justify;
+    }
+    .form,
+    .form button {
+        width: 100%;
+    }
+    .form button{
+        margin-bottom: 10px;
+    }
+    #formLogin{
+        top: 180px;
+        left: 20px;
+        width: 80%;    
+    }
+    .box .loginInfo{
+        width: 65%;       
+    }
+    #checkbox input{
+        width: 10%;
+        margin-left: -70px;
+    }
+    #checkbox label{
+        width: 85%;
+        margin-left: -10px;
+    }
+
+    .formChalet,
+    #homePage,
+    #sectionProfile,
+    #adminBlog
+    {
+        margin-top: 200px;  
+    }
+    
+    #addService_contenu{ 
+        left:0px;
+        top: -140px;
+        width: 100%;
+        text-align: left;
+    }
+    
+    #buttonEditProfile{
+        width: 100%;
+    }
+    
+    #adminBlog th, #adminBlog td{
+        font-size: 1rem;
+        padding: 0;
+    }  
+}
+
+@media screen and (max-width: 430px){
+    .chaletNotFound{
+        margin-top: 200px;
+    }
+    #imagesMiniatures{
+        width: 100%;
+        height: 850px;   
+    }
+    .thumbnailImage,
+    .info{
+        display: block;
+        width: 100%;
+    }
+    .thumbnailImage{
+        text-align: center;
+        margin:20px auto; 
+    }
+    
+    .box {
+        height: 1100px;   
+    }
+    .box .loginTitle{
+        font-size: 2rem;
+    }
+    .box .loginInfo,
+    .formRegister h2,
+     .formRegister p{
+        font-size: 1.5rem;          
+    }
+    .box .loginInfo{
+        width: 90%;
+        padding-left: 5px; 
+    } 
+    #formLogin{
+        left: 10px;   
+    }
+    #checkbox input{
+        width: 10%;
+        margin-left: -20px;
+    }
+    #checkbox label{
+        width: 85%;
+        margin-left: 10px;
+    }
+    #sectionProfile,
+    #adminBlog,
+    #sectionPost{
+        margin-top: 250px;
+    }
+    #sectionProfile h2 {
+        font-size:1.3rem;    
+    }
+    #sectionProfile,
+    #infoProfile td,
+    #infoProfile th{
+        padding: 0px;
+        font-size: 1rem;
+    }
+    #adminBlog th,
+    #adminBlog td{
+        font-size: 0.7rem;
+        padding:0;
+    }    
+}
+
+
+
+
+
+
+
+
+
+
+
